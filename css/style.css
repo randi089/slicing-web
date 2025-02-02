@@ -33,6 +33,11 @@ nav {
   border-bottom: 1px solid var(--black);
   margin-top: 4rem;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: 0;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
 }
 
 nav a .svg {
