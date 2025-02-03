@@ -674,11 +674,10 @@ footer > p > a {
     top: -100vh;
     right: 0;
     flex-direction: column;
-    justify-content: space-between;
     overflow: scroll;
     gap: 1rem;
     align-items: center;
-    width: 40vw;
+    width: 60vw;
     padding-top: 1rem;
     height: 85vh;
     background-color: rgba(255, 255, 255, 0.8);
