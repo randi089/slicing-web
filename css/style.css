@@ -114,7 +114,7 @@ header .header-text button,
 
 header .svg {
   width: 30rem;
-  border: 5px dashed var(--gray);
+  border: 0.4rem dashed var(--gray);
 }
 
 /* End Header */
@@ -124,6 +124,7 @@ header .svg {
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--black);
 }
 
@@ -143,6 +144,8 @@ header .svg {
 .services .services-text {
   display: flex;
   padding: 0 6rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .services .services-text h1,
@@ -187,6 +190,7 @@ header .svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .services-block .services-block-card .services-block-card-text h3 {
@@ -208,12 +212,16 @@ header .svg {
   text-decoration: none;
 }
 
+.services-block .services-block-card .services-block-card-text .learn-more .svg {
+  width: 2.5rem;
+}
+
 .services-block .services-block-card .services-block-card-text .learn-more span {
   margin-left: 2rem;
   font-size: 1.2rem;
 }
 
-.services-block .services-block-card .svg {
+.services-block .services-block-card > .svg {
   width: 13rem;
 }
 
@@ -253,7 +261,7 @@ header .svg {
   content: "";
   width: 6rem;
   height: 6rem;
-  border: 5px dashed var(--gray);
+  border: 0.4rem dashed var(--gray);
   position: absolute;
   left: -0.5%;
   top: 33%;
@@ -292,6 +300,8 @@ header .svg {
 /* Case Studies */
 .case-studies .case-studies-text {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .case-studies .case-studies-content {
@@ -329,6 +339,10 @@ header .svg {
 .case-studies .case-studies-content .case-studies-content-text p {
   color: var(--white);
   font-size: 1rem;
+}
+
+.case-studies .case-studies-content .case-studies-content-text a .svg {
+  width: 1.5rem;
 }
 
 .case-studies .case-studies-content .case-studies-content-text span {
@@ -405,6 +419,8 @@ header .svg {
 /* Contact Us */
 .contact-us .contact-us-text {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .contact-us .contact-us-text p {
@@ -509,6 +525,8 @@ footer .footer-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 footer .footer-heading a .svg {
@@ -520,6 +538,7 @@ footer .footer-heading ul {
   list-style: none;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 footer .footer-heading ul li a {
@@ -542,6 +561,8 @@ footer .footer-heading .social-media a i {
 footer .footer-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-top: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--white);
@@ -575,6 +596,7 @@ footer .footer-content .footer-content-contact p span {
 footer .footer-content form {
   background-color: var(--blackLittle);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0 2rem;
   border-radius: 1rem;
@@ -629,15 +651,26 @@ footer > p > a {
   html {
     font-size: 55%;
   }
+
+  /* Footer */
+  footer .footer-content form {
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
+
+  footer .footer-content form {
+    margin: 0 auto;
+  }
+  /* End Footer */
 }
 
 /* Tablet & Mobile*/
 @media (max-width: 616px) {
   /* Navbar */
   nav ul {
-    display: none;
     position: absolute;
-    bottom: -100vh;
+    bottom: 100vh;
     right: 0;
     flex-direction: column;
     gap: 1rem;
@@ -646,20 +679,33 @@ footer > p > a {
     padding-top: 1rem;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(0);
+    transition: 0.3s;
+  }
+
+  nav ul.active {
+    bottom: -100vh;
+    transform: scale(1);
   }
 
   nav ul li {
     font-size: 2rem;
   }
 
+  nav ul li:hover {
+    border: none;
+  }
+
   #hamburger-menu {
     display: inline-block;
   }
+  /* End Navbar */
 
   /* Services */
   .services-block {
     justify-content: center;
   }
+  /* End Services */
 
   /* Case Studies */
   .case-studies {
@@ -675,4 +721,47 @@ footer > p > a {
     gap: 3rem;
     margin: 4rem auto 0;
   }
+  /* End Case Studies */
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  /* Header */
+  header .svg {
+    display: none;
+  }
+  /* End Header */
+
+  /* CTA */
+  .cta .svg {
+    display: none;
+  }
+  /* End CTA */
+
+  /* Case Studies */
+  .case-studies .case-studies-content .case-studies-content-text {
+    width: 100%;
+  }
+
+  .services .services-text p,
+  .case-studies .case-studies-text p {
+    width: 100%;
+  }
+  /* End Case Studies */
+
+  /* Contact Us */
+  .contact-us form .form-content {
+    width: 100%;
+  }
+
+  .contact-us form .svg {
+    display: none;
+  }
+  /* End Contact Us */
+
+  /* Footer */
+  footer .footer-content form input {
+    width: 90%;
+  }
+  /* End Footer */
 }
