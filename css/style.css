@@ -126,6 +126,7 @@ header .svg {
   justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--black);
+  gap: 1rem;
 }
 
 .company-logo .svg {
@@ -670,21 +671,23 @@ footer > p > a {
   /* Navbar */
   nav ul {
     position: absolute;
-    bottom: 100vh;
+    top: -100vh;
     right: 0;
     flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
     gap: 1rem;
     align-items: center;
-    width: 30vw;
+    width: 40vw;
     padding-top: 1rem;
-    height: 100vh;
+    height: 85vh;
     background-color: rgba(255, 255, 255, 0.8);
     transform: scale(0);
     transition: 0.3s;
   }
 
   nav ul.active {
-    bottom: -100vh;
+    top: 100%;
     transform: scale(1);
   }
 
